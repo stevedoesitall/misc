@@ -1,0 +1,14 @@
+{
+  "name": "rom_clean",
+  "version": "1.0.0",
+  "description": "",
+  "main": "clean_roms.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^10.0.3"
+  }
+}

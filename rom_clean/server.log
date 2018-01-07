@@ -27,3 +27,25 @@ FILE_[U] copy 2.txt: kept
 Job: Region Clean; Run On Fri Dec 29 2017 11:17:31 GMT-0500 (EST)
 FILE2_[U] copy 2.txt: kept
 FILE_[U] copy 2.txt: kept
+
+Job: Title Clean; Run On Sat Jan 06 2018 14:09:44 GMT-0500 (EST)
+FILE2_[J] 3 copy.txt: kept
+FILE_[J] 3 copy.txt: kept
+FILE2_[U] copy 2.txt: deleted
+FILE_[J] 3.txt: deleted
+FILE2_[J] 3.txt: deleted
+FILE_[U] copy 2.txt: deleted
+FILE_[U] copy 3.txt: deleted
+
+Job: Region Clean; Run On Sat Jan 06 2018 14:13:32 GMT-0500 (EST)
+FILE2_[U] 3 copy 2.txt: kept
+FILE_[U] 3 copy.txt: kept
+.DS_Store: deleted
+FILE2_[J] 3 copy 3.txt: deleted
+FILE2_[J] 3 copy.txt: deleted
+FILE_[J] 3 copy 2.txt: deleted
+FILE_[J] 3 copy 3.txt: deleted
+
+Job: Title Clean; Run On Sat Jan 06 2018 14:13:47 GMT-0500 (EST)
+FILE2_[U] 3 copy 2.txt: kept
+FILE_[U] 3 copy.txt: kept

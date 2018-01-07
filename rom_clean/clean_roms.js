@@ -120,7 +120,7 @@ function title_clean(folder) {
             }
             if (rom_counts.processed == files.length) {
                 setTimeout(() => {
-                    console.log(`ROM region clean finished. Processed: ${rom_counts.processed}. Kept: ${rom_counts.kept}. Deleted: ${rom_counts.deleted}. Errored: ${rom_counts.errored}.`);
+                    console.log(`ROM title clean finished. Processed: ${rom_counts.processed}. Kept: ${rom_counts.kept}. Deleted: ${rom_counts.deleted}. Errored: ${rom_counts.errored}.`);
                 }, 3000);
             }
         });

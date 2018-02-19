@@ -1,10 +1,12 @@
 const fs = require('fs');
+const path = require('path');
 
-var directory = '/Users/stephengiordano/Desktop/';
-var now = new Date().toString();
+//Change the value of directory to the folder you want to clean, ex. /Users/stephenagiordano/Desktop/Rom Files
+const directory = path.join(__dirname, '../');
+const now = new Date().toString();
 
 function region_clean(folder, region) {
-    var rom_counts = {
+    const rom_counts = {
         processed: 0,
         kept: 0,
         errored: 0,
@@ -15,31 +17,31 @@ function region_clean(folder, region) {
             console.log('Unable to append to file.')
         }
     });
-    var region_code = '[' + region.toUpperCase() + ']';
-    var path = directory + folder.toLowerCase() + '/';
-    fs.readdir(path, (err, files) => {
+    const region_code = '[' + region.toUpperCase() + ']';
+    const folder_path = directory + folder.toLowerCase() + '/';
+    fs.readdir(folder_path, (err, files) => {
         files.forEach(file => {
             rom_counts.processed = rom_counts.processed + 1;
             if (file.indexOf(region_code) == -1) {
-                fs.unlink(path + file, (err) => {
+                fs.unlink(folder_path + file, (err) => {
                     if (err) {
                         console.log('Failed to delete file: ' + file);
                         console.log(err);
-                        var status = 'errored';
+                        const status = 'errored';
                         rom_counts.errored = rom_counts.errored + 1;
                         fs.appendFile('server.log', file + ': ' + status + '\n', (err) => {
                             if (err) {
-                                console.log('Unable to append to file.')
+                                console.log('Unable to append to file.');
                             }
                         });
                     }
                     else {
                         console.log('Successfully deleted: ' + file);
-                        var status = 'deleted';
+                        const status = 'deleted';
                         rom_counts.deleted = rom_counts.deleted + 1;
                         fs.appendFile('server.log', file + ': ' + status + '\n', (err) => {
                             if (err) {
-                                console.log('Unable to append to file.')
+                                console.log('Unable to append to file.');
                             }
                         });
                     }
@@ -47,11 +49,11 @@ function region_clean(folder, region) {
             }
             else {
                 console.log(file + ' kept.');
-                var status = 'kept';
+                const status = 'kept';
                 rom_counts.kept = rom_counts.kept + 1;
                 fs.appendFile('server.log', file + ': ' + status + '\n', (err) => {
                     if (err) {
-                        console.log('Unable to append to file.')
+                        console.log('Unable to append to file.');
                     }
                 });
             }
@@ -65,7 +67,7 @@ function region_clean(folder, region) {
 };
 
 function title_clean(folder) {
-    var rom_counts = {
+    const rom_counts = {
         processed: 0,
         kept: 0,
         errored: 0,
@@ -76,31 +78,31 @@ function title_clean(folder) {
             console.log('Unable to append to file.')
         }
     });
-    var used_titles = [];
-    var path = directory + folder.toLowerCase() + '/';
+    const used_titles = [];
+    const path = directory + folder.toLowerCase() + '/';
     fs.readdir(path, (err, files) => {
         files.forEach(file => {
             rom_counts.processed = rom_counts.processed + 1;
-            var rom_name = file.substr(0,file.indexOf('_'));
+            const rom_name = file.substr(0,file.indexOf('_'));
             if (used_titles.includes(rom_name)) {
                 fs.unlink(path + file, (err) => {
                     if (err) {
                         console.log('Failed to delete file: ' + file);
                         console.log(err);
-                        var status = 'errored';
+                        const status = 'errored';
                         rom_counts.errored = rom_counts.errored + 1;
                         fs.appendFile('server.log', file + ': ' + status + '\n', (err) => {
                             if (err) {
-                                console.log('Unable to append to file.')
+                                console.log('Unable to append to file.');
                             }
                         });
                     }
                     else {
                         console.log('Successfully deleted: ' + file);
-                        var status = 'deleted';
+                        const status = 'deleted';
                         fs.appendFile('server.log', file + ': ' + status + '\n', (err) => {
                             if (err) {
-                                console.log('Unable to append to file.')
+                                console.log('Unable to append to file.');
                             }
                         });
                         rom_counts.deleted = rom_counts.deleted + 1;
@@ -110,11 +112,11 @@ function title_clean(folder) {
             else {
                 used_titles.push(rom_name);
                 console.log(file + ' kept.');
-                var status = 'kept';
+                const status = 'kept';
                 rom_counts.kept = rom_counts.kept + 1;
                 fs.appendFile('server.log', file + ': ' + status + '\n', (err) => {
                     if (err) {
-                        console.log('Unable to append to file.')
+                        console.log('Unable to append to file.');
                     }
                 });
             }

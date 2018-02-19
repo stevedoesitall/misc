@@ -49,3 +49,79 @@ FILE_[J] 3 copy 3.txt: deleted
 Job: Title Clean; Run On Sat Jan 06 2018 14:13:47 GMT-0500 (EST)
 FILE2_[U] 3 copy 2.txt: kept
 FILE_[U] 3 copy.txt: kept
+
+Job: Title Clean; Run On Mon Feb 19 2018 10:24:53 GMT-0500 (EST)
+
+Job: Title Clean; Run On Mon Feb 19 2018 10:29:00 GMT-0500 (EST)
+.DS_Store: kept
+FILE2_[J] 3 copy 2.txt: kept
+FILE_[U] 3 copy.1.txt: kept
+FILE2_[U] 3 copy 2.1.txt: deleted
+FILE_[U] 3 copy.txt: deleted
+
+Job: Title Clean; Run On Mon Feb 19 2018 10:30:40 GMT-0500 (EST)
+FILE2_[J] 3 copy 2.2.txt: kept
+.DS_Store: kept
+FILE_[J] 3 copy.3.txt: kept
+FILE2_[U] 3 copy 2.1.txt: deleted
+FILE2_[J] 3 copy 2.txt: deleted
+FILE_[U] 3 copy.1.txt: deleted
+FILE_[U] 3 copy.2.txt: deleted
+
+Job: Region Clean; Run On Mon Feb 19 2018 10:34:13 GMT-0500 (EST)
+FILE2_[U].txt: kept
+FILE_[U].txt: kept
+.DS_Store: deleted
+FILE2_[J].txt: deleted
+FILE_[J].txt: deleted
+
+Job: Title Clean; Run On Mon Feb 19 2018 10:34:29 GMT-0500 (EST)
+FILE2_[U].txt: kept
+FILE_[U].txt: kept
+
+Job: Title Clean; Run On Mon Feb 19 2018 10:34:41 GMT-0500 (EST)
+FILE2_[U].txt: kept
+FILE_[U].1.txt: kept
+FILE_[U].txt: deleted
+
+Job: Region Clean; Run On Mon Feb 19 2018 10:38:07 GMT-0500 (EST)
+FILE2_[U].1.txt: kept
+FILE_[U].1.txt: kept
+FILE_[U].2.txt: kept
+FILE_[U].3.txt: kept
+FILE2_[J].txt: deleted
+FILE_[J].4.txt: deleted
+
+Job: Title Clean; Run On Mon Feb 19 2018 10:38:13 GMT-0500 (EST)
+FILE2_[U].1.txt: kept
+FILE_[U].1.txt: kept
+FILE_[U].3.txt: deleted
+FILE_[U].2.txt: deleted
+
+Job: Title Clean; Run On Mon Feb 19 2018 10:45:14 GMT-0500 (EST)
+FILE2_[U].1.txt: kept
+FILE_[U].1.txt: kept
+
+Job: Region Clean; Run On Mon Feb 19 2018 10:45:52 GMT-0500 (EST)
+FILE2_[U].1.txt: kept
+FILE_[U].1.txt: kept
+FILE_[U].2.txt: kept
+FILE_[U].3.txt: kept
+FILE_[U].4.txt: kept
+FILE_[J].5.txt: deleted
+
+Job: Region Clean; Run On Mon Feb 19 2018 10:56:49 GMT-0500 (EST)
+FILE2_[U].1.txt: kept
+FILE_[U].1.txt: kept
+FILE_[U].2.txt: kept
+FILE_[U].3.txt: kept
+FILE_[U].4.txt: kept
+FILE2_[J].2.txt: deleted
+FILE_[J].5.txt: deleted
+
+Job: Title Clean; Run On Mon Feb 19 2018 10:56:55 GMT-0500 (EST)
+FILE2_[U].1.txt: kept
+FILE_[U].1.txt: kept
+FILE_[U].3.txt: deleted
+FILE_[U].2.txt: deleted
+FILE_[U].4.txt: deleted

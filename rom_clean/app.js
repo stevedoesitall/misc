@@ -1,28 +1,27 @@
-//PLEASE READ
-//Available commands: region and title
-//Region code and folder values are case insensitive; region code shortcut is 'r' and folder shortcut is 'f'
-//Sample command ('u' is the region code; 'test' is the folder): node app.js title -r='u' -f='test'
-//Run region clean before title clean to avoid deleting the wrong version of a ROM
-//Last update: 12.27.17
+/* PLEASE READ
+1. Available commands: region and title
+2. Region code and folder values are case insensitive; region code shortcut is 'r' and folder shortcut is 'f'
+3. Title clean only needs the folder shortcut (-f)
+4. Sample command ('u' is the region code; 'test' is the folder): node app.js title -r='u' -f='test'
+5. Run region clean before title clean to avoid deleting the wrong version of a ROM
+6. Last update: 02.19.18 */
 
-const fs = require('fs');
 const yargs = require('yargs');
-const os = require('os');
 const roms = require('./clean_roms.js');
 
-var region_options = {
+const region_options = {
 			describe: 'Region code',
 			demand: true,
 			alias: 'r'
 		}
 
-var folder_options = {
+const folder_options = {
 			describe: 'Folder name',
 			demand: true,
 			alias: 'f'
         }
         
-var argv = yargs
+const argv = yargs
         .command('region', 'Clean ROM files by region.', {
             region: region_options,
             folder: folder_options
@@ -33,18 +32,21 @@ var argv = yargs
         .help()
         .argv;
 
-var command = argv._[0];
+const command = argv._[0];
 
 if (command == 'region') {
     if (argv.region.indexOf('[') != -1 || argv.region.indexOf(']') != -1) {
         console.log('Do not include brackets ("[" or "]") in your region name!');
         return false;
     }
-    var rom = roms.region_clean(argv.folder, argv.region);
+    const folder = argv.folder;
+    const region = argv.region;
+    const rom = roms.region_clean(folder, region);
     console.log('Cleaning ROM files based on region...');
 }
 
 else if (command == 'title') {
-    var rom = roms.title_clean(argv.folder);
+    const folder = argv.folder;
+    const rom = roms.title_clean(folder);
     console.log('Cleaning ROM files based on title...');
 }

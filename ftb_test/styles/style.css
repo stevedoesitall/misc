@@ -1,0 +1,41 @@
+body {
+    background-color: lavender;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.col {
+    border: .1em black solid;
+    padding: 5em;
+    font-size: 20px;
+}
+
+.left {
+    float: left;
+    margin-left: 10em;
+}
+
+.right {
+    float: right;
+    margin-right: 10em;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    .left, .right {
+        float: none;
+        margin: 0;
+        padding: .1em;
+    }
+
+    .right {
+        margin-top: .1em;
+    }
+}
